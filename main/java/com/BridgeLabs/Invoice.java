@@ -6,6 +6,14 @@ public class Invoice {
     private int totalRides;
     private double totalFare;
     private double avgFare;
+    private int userId;
+
+    public Invoice(int totalRides, double totalFare, double avgFare, int userId) {
+        this.totalRides = totalRides;
+        this.totalFare = totalFare;
+        this.avgFare = avgFare;
+        this.userId = userId;
+    }
 
     public Invoice() {
     }
@@ -15,7 +23,6 @@ public class Invoice {
         this.totalFare = totalFare;
         this.avgFare = avgFare;
     }
-
     public int getTotalRides() {
         return totalRides;
     }

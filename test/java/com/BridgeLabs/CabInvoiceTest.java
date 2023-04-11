@@ -41,4 +41,16 @@ public class CabInvoiceTest {
             Invoice invoice =cabInvoice.generateInvoice(rides);
             Assertions.assertEquals(expectedInvoice,invoice);
         }
+        @Test
+    public void givenUserIdOfRidesFromRideRepoReturnsInvoice(){
+            Ride ride=new Ride(20,5);
+            Ride ride1=new Ride(0.2,1);
+            Ride ride2=new Ride(0.5,2);
+            Ride ride3=new Ride(10,5);
+            Ride[] rides ={ride,ride1,ride2,ride3};
+            RideRepository rideRepository =new RideRepository();
+            Invoice expectedInvoice = new Invoice(4,322.0,322.0/4,1214);
+            Invoice invoice=rideRepository.generateInvoice(1214,rides);
+            Assertions.assertEquals(expectedInvoice,invoice);
+        }
 }
